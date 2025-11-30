@@ -1,12 +1,12 @@
 #include <QApplication>
 
 #include <QWidget>
-#include <FluWidget.h>
-
+#include "Notepad.h"
+ 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    FluWidget window;
-    window.show();
+    Notepad notepad;
+    notepad.show();
     return app.exec();
 }

@@ -23,7 +23,7 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/FluentUI/FluUtils
 )
 
-set(TGT GithubReleaseStatus)  # Add this line to define the target name
+set(TGT CppQtNotepad)  # Add this line to define the target name
 FILE(GLOB DIR_SRCS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
     "*.h"
     "*.cpp"
@@ -43,20 +43,20 @@ endif()
 set_property(TARGET ${TGT} PROPERTY WIN32_EXECUTABLE true)
 
 
-# set(QSS_FILES
-#     "StyleSheet/light/DemoWindow.qss"
-#     "StyleSheet/dark/DemoWindow.qss"
-# )
-# source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
+set(QSS_FILES
+    "StyleSheet/light/Notepad.qss"
+    "StyleSheet/dark/Notepad.qss"
+    "StyleSheet/atomOneDark/Notepad.qss"
+)
+source_group(TREE ${CMAKE_SOURCE_DIR} FILES ${QSS_FILES})
 
-# qt_add_resources(${TGT} "Qss"
-#     PREFIX "/"
-#     BASE "."
-#     FILES
-#     ${QSS_FILES}
-# )
+qt_add_resources(${TGT} "Qss"
+    PREFIX "/"
+    BASE "."
+    FILES
+    ${QSS_FILES}
+)
 
-# add_executable(GithubReleaseStatus App.cpp)
 target_link_libraries(${TGT}
     PRIVATE 
     FluControls
